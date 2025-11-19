@@ -9,13 +9,11 @@ interface ToDoI {
 }
 
 class ToDoModel {
-  constructor(
-    private toDoList: SvelteMap<string, ToDoI> = new SvelteMap(this.getTodoFromLocalStorage()),
-  ) {
+  constructor(private toDoList: SvelteMap<string, ToDoI> = new SvelteMap()) {
     console.log(this.toDoList);
     $effect.root(() => {
       $effect(() => {
-        this.setTodoToLocalStorage();
+        // this.setTodoToLocalStorage();
       });
     });
   }
@@ -48,7 +46,7 @@ class ToDoModel {
     localStorage.setItem('todoList', JSON.stringify([...this.toDoList.entries()]));
   }
   getTodoFromLocalStorage() {
-    const data = JSON.parse(localStorage.getItem('todoList') || '');
+    const data = localStorage.getItem('todoList');
     return data;
   }
 }
