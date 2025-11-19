@@ -12,7 +12,7 @@ class ToDoModel {
   constructor(private toDoList: SvelteMap<string, ToDoI> = new SvelteMap()) {
     $effect.root(() => {
       $effect(() => {
-        // this.setTodoToLocalStorage();
+        this.setTodoToLocalStorage();
       });
     });
   }
@@ -41,9 +41,9 @@ class ToDoModel {
       (a, b) => Number(a.isCompleted) - Number(b.isCompleted),
     );
   }
-  // setTodoToLocalStorage() {
-  //   localStorage.setItem('todoList', JSON.stringify([...this.toDoList.entries()]));
-  // }
+  setTodoToLocalStorage() {
+    localStorage.setItem('todoList', JSON.stringify([...this.toDoList.entries()]));
+  }
   // getTodoFromLocalStorage() {
   //   const data = localStorage.getItem('todoList');
   //   return data;
