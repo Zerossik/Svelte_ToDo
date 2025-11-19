@@ -1,0 +1,68 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scrollbar-width: thin;
+  scrollbar-color: lightgrey transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 12px; /* ширина вертикального скролла */
+  height: 12px; /* высота горизонтального скролла */
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff; /* трек */
+  border-radius: 6px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: lightgrey; /* ползунок */
+  border-radius: 6px; /* закругление */
+  border: 3px solid #f0f0f0; /* отступ вокруг ползунка */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+html {
+  scrollbar-gutter: stable;
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-size: 1rem;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+a {
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+li,
+ol {
+  list-style: none;
+}
